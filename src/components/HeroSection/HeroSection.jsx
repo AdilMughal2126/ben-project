@@ -51,6 +51,7 @@ export default function HeroSection() {
                     onChange={(e) => setLastName(e.target.value)}
                   />
                 </div>
+                {/* This is a JSX comment */} 
                 <div className="form-field">
                   <label htmlFor="email">Email: </label>
                   <input
