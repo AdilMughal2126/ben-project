@@ -7,16 +7,17 @@ export default function HeroSection() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     setError("");
     e.preventDefault();
-    if (!firstName || !lastName || !email) {
+    if (!firstName || !lastName || !email || !country) {
       setError("All fields are required");
       return;
     } else {
-      alert("Form submitted successfully");
+      alert("Form submitted successfully! Details Below... \n Name: "  + firstName + " " + lastName + " \n Email: " + email + " \n Country: " + country );
     }
   };
 
@@ -58,6 +59,16 @@ export default function HeroSection() {
                     placeholder="Enter your name"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form-field">
+                  <label htmlFor="Country">Home Country: </label>
+                  <input
+                    type="text"
+                    name="Country"
+                    placeholder="Enter your country"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
                   />
                 </div>
               </div>
